@@ -31,7 +31,7 @@ app.use(session({
 app.get ('/', (req, res) => {
     if (req.session.isLogin) {
         const userId = req.session.user.id
-        const query = `SELECT tb_projects.id, tb_projects.author_id, tb_user.name, tb_user.email, title, "sDate", "eDate", description, tb_projects.image, author, techjs, technode, techvue, techreact, author_id
+        const query = `SELECT tb_projects.id, tb_projects.author_id, tb_user.name, tb_user.email, title, "sDate", "eDate", description, tb_projects.image, techjs, technode, techvue, techreact, author_id
         FROM tb_projects LEFT JOIN tb_user ON tb_projects.author_id = tb_user.id WHERE author_id = ${userId}`
 
         db.connect((err, client, done) => {
@@ -63,7 +63,7 @@ app.get ('/', (req, res) => {
         })
     } else {
         let query
-        query = `SELECT tb_projects.id, tb_projects.author_id, tb_user.name, tb_user.email, title, "sDate", "eDate", description, tb_projects.image, author, techjs, technode, techvue, techreact, author_id
+        query = `SELECT tb_projects.id, tb_projects.author_id, tb_user.name, tb_user.email, title, "sDate", "eDate", description, tb_projects.image, techjs, technode, techvue, techreact, author_id
         FROM tb_projects LEFT JOIN tb_user ON tb_projects.author_id = tb_user.id`
         
         res.render('index') 
