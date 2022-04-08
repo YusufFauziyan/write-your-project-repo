@@ -1,0 +1,32 @@
+{
+  "name": "day8-routing",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.2",
+    "hbs": "^4.2.0",
+    "multer": "^1.4.4",
+    "pg": "^8.7.3"
+  },
+  "keywords": [],
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YusufFauziyan/Day13-LastSeason.git"
+  },
+  "bugs": {
+    "url": "https://github.com/YusufFauziyan/Day13-LastSeason/issues"
+  },
+  "homepage": "https://github.com/YusufFauziyan/Day13-LastSeason#readme",
+  "description": ""
+}

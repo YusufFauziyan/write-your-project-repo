@@ -1,0 +1,74 @@
+nav {
+    font-family: 'Poppins', sans-serif;
+}
+
+.bg-container {
+    background-color: rgb(226,230,234);
+}
+
+.bx {
+    cursor: pointer;
+}
+.bx:hover {
+    color: grey;
+}
+/* CARD */
+.card-text {
+    font-size: 0.7em;
+}
+
+
+/* Card Arrow */
+
+.arrow a {
+    position: absolute;
+    right: 10px;
+    color: rgba(25, 0, 255, 0.5);
+    font-weight: bold;
+    font-size: 0.6em;
+    padding-top: 10px;
+}
+
+.card-btn .btn {
+    color: white;
+    font-size: 0.8rem;
+    font-weight: normal;
+    padding: 8px 40px;
+    
+}
+
+.card-btn .btn:hover {
+    color: black;
+}
+
+.card-body a .bx {
+    font-size: .8rem;
+    transition: .3s;
+}
+
+.arrow a:hover {
+    color: rgba(25, 0, 255, 0.3);
+}
+
+.card-body a:hover .bx-right-arrow-alt {
+    transform: translateX(.25rem);
+}
+
+label {cursor: pointer;}
+
+.form-floating textarea {resize: none;}
+
+input[type="checkbox"] {
+    cursor: pointer;
+}
+
+
+.bx-paperclip {
+    position: absolute;
+    right: 0;
+    top: 27%;
+    right: 2%;
+    transform: rotate(-45deg);
+    opacity: .7;
+}
+
