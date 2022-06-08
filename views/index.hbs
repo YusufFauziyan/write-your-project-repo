@@ -66,23 +66,29 @@
                 <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas nobis nesciunt quas sint aperiam neque. Nam debitis commodi sed. Voluptas, reiciendis eaque? Quam in esse voluptas magnam, hic deleniti velit architecto praesentium voluptates eveniet perferendis possimus labore. Numquam asperiores eius eligendi vero illo dolore nesciunt quisquam</p>
                 <div class="mt-4 mb-4">
                   <a href="/contact" class="text-decoration-none btn btn-dark btn-outline-light shadow ps-4 pe-4" style="border-radius: 20px;">Contact
-                  <a href="" class="text-decoration-none text-dark ms-4">Download CV<i class='bx bx-download ps-2'></i>
+                  <a href="../public/assets/yusuffauziyan - cv.pdf" class="text-decoration-none text-dark ms-4">Download CV<i class='bx bx-download ps-2'></i>
                   </a>
                 </div>
                 <div class="fs-2">
                   <a href="https://github.com/YusufFauziyan" style="text-decoration: none; color:black" target="_blank">
                     <i class='bx bxl-github pe-3' ></i>
                   </a>
+                  <a href="https://www.linkedin.com/in/yusuffauziyan/" style="text-decoration: none; color:black" target="_blank">
                     <i class='bx bxl-linkedin pe-3' ></i>
+                  </a>
+                  <a href="https://www.instagram.com/yusuffauziyan" style="text-decoration: none; color:black" target="_blank">
                     <i class='bx bxl-instagram pe-3' ></i>
+                  </a>
+                  <a href="https://wa.me/+629658043193" style="text-decoration: none; color:black" target="_blank">
                     <i class='bx bxl-whatsapp'></i>
+                  </a>
                 </div>
             </div>
             <div class="m-auto ms-5" style="flex:30">
                 <div class="card text-center bg-light shadow" style="border-radius: 10px; border: none;">
-                    <img src="public/assets/amongus.jpg" class="card-img-top" alt="..." width="100%">
+                    <img src="public/assets/about1.png" class="card-img-top" alt="..." width="100%">
                     <div class="card-body">
-                      <h5 class="card-title">Lord Gaben</h5>
+                      <h5 class="card-title">Yusuf Fauziyan</h5>
                       <p class="card-text">Fullstack Dev</p>
                     </div>
                 </div>
@@ -90,7 +96,6 @@
         </div>
       </div>
       <!-- PROJECT -->
-      {{#if isLogin}}
       <div class="container" style="height: 100vh;">
         <h1 class="text-center mt-5 mb-5 fw-bold text-uppercase">My Project</h1>
         <div class="container d-flex justify-content-around flex-wrap">
@@ -113,16 +118,17 @@
                       <i class='bx bxl-{{this.techjs}}' ></i>
                       <i class='bx bxl-{{this.techvue}}' ></i>
                     </div>
+                    {{#if isLogin}}
                     <div class="d-flex justify-content-center card-btn"> 
                       <a href="/update-project/{{this.id}}" class="text-decoration-none btn btn-dark btn-outline-light shadow " type="submit" style="border-radius: 20px; position: static;">Edit</a>
                       <a href="/delete-project/{{this.id}}" class="text-decoration-none btn btn-dark btn-outline-light shadow " type="submit" style="border-radius: 20px; position: static;">Delete</a>
                     </div>
+                    {{/if}}
                 </div>
             </div>
             {{/each}}
         </div>
       </div>
-      {{/if}}
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->

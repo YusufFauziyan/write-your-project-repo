@@ -65,18 +65,40 @@ app.get ('/', (req, res) => {
         let query
         query = `SELECT tb_projects.id, tb_projects.author_id, tb_user.name, tb_user.email, title, "sDate", "eDate", description, tb_projects.image, techjs, technode, techvue, techreact, author_id
         FROM tb_projects LEFT JOIN tb_user ON tb_projects.author_id = tb_user.id`
+
+        db.connect((err, client, done) => {
+            if (err) throw err
+            client.query(query, (err, result) => {
+                if (err) throw err
+                done()
+                let data = result.rows
+                
+                data = data.map(function (item) {
+                    return {
+                        title: item.title,
+                        description: item.description.slice(0, 150) + '.....',
+                        author: item.name,
+                        sDate: item.sDate,
+                        eDate: item.eDate,
+                        duration: abtDuration(item.sDate, item.eDate),
+                        techjs: item.techjs,
+                        techreact: item.techreact,
+                        technode: item.technode,
+                        techvue: item.techvue,
+                        id: item.id,
+                        isLogin: req.session.isLogin,
+                        image: item.image
+                    }
+                }) 
+                res.render('index', {isLogin: req.session.isLogin, user: req.session.user, blogs: data})
+            })
+        })
         
-        res.render('index') 
     }
 })
 
 // SHOW BLOG DETAIL
 app.get('/blog/:id', (req, res) => {
-    //LOGIN SESSION
-    if(!req.session.isLogin){
-        req.flash('danger', 'Please Login first!!')
-        return res.redirect('/login')
-    }
 
     let id =  req.params.id
     db.connect((err, client, done) => {
